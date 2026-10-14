@@ -240,8 +240,7 @@ const msg = document.getElementById("tts-message");
 if (!("speechSynthesis" in window)) { msg.textContent = "Text-to-speech is not supported by this browser."; return; }
 const load = () => {
 select.replaceChildren();
-speechSynthesis.getVoices().forEach((v, i) => select.add(new Option("${v.name} (${v.lang})", String(i)));
-};
+speechSynthesis.getVoices().forEach((v, i) => select.add(new Option("${v.name} (${v.lang})", String(i))));
 load();
 speechSynthesis.onvoiceschanged = load;
 document.getElementById("tts-speak").onclick = () => {
